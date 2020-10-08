@@ -39,11 +39,13 @@ def parse_log(filename):
 
     print('Filename: ' + filename)
     if category:
-        print(category + ': ' + category_time)
-        print('Total: ' + str(total))
-        print('Pass: ' + str(results['Pass']))
-        print('Fail: ' + str(results['Fail']))
-        print('Details: ' + str(results))
+        fields = [
+            str(total),
+            str(results['Pass']),
+            str(results['Fail']),
+            category_time,
+        ]
+        print('\t'.join(fields))
     else:
         print('INCOMPLETE')
     print()

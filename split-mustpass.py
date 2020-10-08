@@ -35,6 +35,8 @@ with open('external/vulkancts/mustpass/master/vk-default.txt') as f:
         test_case = line.strip()
         if test_case in SKIPLIST:
             continue
+        if '.wayland.' in test_case:
+            continue
 
         groups = test_case.split('.')
 
